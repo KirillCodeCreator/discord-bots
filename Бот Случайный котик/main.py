@@ -4,7 +4,7 @@ import os
 import discord
 import requests
 
-from config import BOT_CONFIG
+from config import BOT_TOKEN
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
@@ -55,4 +55,4 @@ intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
 client = YLBotClient(intents=intents)
-client.run(BOT_CONFIG)
+client.run(BOT_TOKEN)
