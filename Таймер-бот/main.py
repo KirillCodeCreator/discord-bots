@@ -32,7 +32,7 @@ class YLBotClient(discord.Client):
         if "set_timer" in message.content.lower():
             hours = int(message.content.lower().split()[2])
             minutes = int(message.content.lower().split()[4])
-            await message.channel.send(f"The timer should start in {hours} hours and {minutes} minutes. ")
+            await message.channel.send(f"Таймер установлен на {hours} часов и {minutes} минут.")
             date = datetime.datetime.now()
             delta = datetime.timedelta(hours=hours, minutes=minutes)
             flag = True
@@ -40,7 +40,7 @@ class YLBotClient(discord.Client):
         if flag:
             while True:
                 if datetime.datetime.now() > date + delta:
-                    await message.channel.send(f'🕒 Time X has come')
+                    await message.channel.send(f'🕒 Время Х наступило')
                     flag = False
                     break
 
